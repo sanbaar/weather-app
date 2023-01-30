@@ -1,0 +1,92 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 28px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.card {
+  max-width: 700px;
+  display: block;
+  margin: 30px auto;
+}
+
+.card-body {
+  max-width: 700px;
+  display: block;
+  margin: 0 auto;
+}
+
+#city-input {
+  width: 450px;
+  padding: 8px 15px;
+}
+
+#current-button {
+  padding: 8px 15px;
+  border-radius: 4px;
+}
+
+.current-date {
+  text-align: center;
+}
+
+.current-day-parameters {
+  text-align: center;
+}
+
+.emoji-current-weather {
+  font-size: 70px;
+}
+.prediction-day {
+  text-align: center;
+  font-size: 18px;
+  display: block;
+  margin: 0 auto;
+}
+
+.prediction-icon {
+  font-size: 30px;
+}
+
+#search-button {
+  padding: 8px 15px;
+}
+
+#search-city {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.temperature {
+  text-align: right;
+  font-size: 70px;
+}
+
+.temperature-prediction {
+  font-size: 14px;
+}
+
+.temp-rain-wind {
+  font-size: 28px;
+  position: relative;
+  bottom: -30px;
+}
+
+.trw-icon {
+  font-size: 18px;
+}
+
+.trw-units {
+  font-size: 14px;
+}
+
+.weather-prediction {
+  padding-top: 26px;
+}
