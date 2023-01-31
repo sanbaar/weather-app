@@ -15,6 +15,7 @@ a {
   max-width: 700px;
   display: block;
   margin: 30px auto;
+  margin-bottom: 10px;
 }
 
 .card-body {
@@ -44,6 +45,12 @@ a {
 .emoji-current-weather {
   font-size: 70px;
 }
+
+.open-source-code {
+  text-align: center;
+  font-size: 14px;
+}
+
 .prediction-day {
   text-align: center;
   font-size: 18px;
