@@ -22,7 +22,8 @@ function showTemperature(response) {
   document.querySelector("#main-wind").innerHTML =
     " " + Math.round(response.data.wind.speed);
   document.querySelector("h1").innerHTML = response.data.name;
-
+  document.querySelector(".description").innerHTML =
+    response.data.weather[0].description;
   function celsius(event) {
     event.preventDefault();
     let temperatureCelsius = document.querySelector("#main-temperature");

@@ -42,6 +42,11 @@ a {
   text-align: center;
 }
 
+.description {
+  text-align: center;
+  text-transform: capitalize;
+}
+
 .emoji-current-weather {
   font-size: 70px;
 }
