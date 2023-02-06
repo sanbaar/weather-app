@@ -44,11 +44,15 @@ a {
 
 .description {
   text-align: center;
+}
+.description::first-letter {
   text-transform: capitalize;
 }
 
-.emoji-current-weather {
-  font-size: 70px;
+#icon {
+  width: 120px;
+  position: relative;
+  top: -10px;
 }
 
 .open-source-code {
