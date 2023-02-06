@@ -34,25 +34,33 @@ function showTemperature(response) {
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].description);
 
-  function celsius(event) {
-    event.preventDefault();
-    let temperatureCelsius = document.querySelector("#main-temperature");
-    temperatureCelsius.innerHTML = " " + Math.round(response.data.main.temp);
-  }
-
-  let celsiusLink = document.querySelector("#celsius");
-  celsiusLink.addEventListener("click", celsius);
-
-  function fahrenheit(event) {
-    event.preventDefault();
-    let temperatureFahrenheit = document.querySelector("#main-temperature");
-    temperatureFahrenheit.innerHTML =
-      " " + Math.round((response.data.main.temp * 9) / 5 + 32);
-  }
-
-  let fahrenheitLink = document.querySelector("#fahrenheit");
-  fahrenheitLink.addEventListener("click", fahrenheit);
+  celsiusTemperature = response.data.main.temp;
 }
+
+function celsius(event) {
+  event.preventDefault();
+  document.querySelector("#main-temperature").innerHTML =
+    " " + Math.round(celsiusTemperature);
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+}
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", celsius);
+
+function fahrenheit(event) {
+  event.preventDefault();
+  document.querySelector("#main-temperature").innerHTML =
+    " " + Math.round((celsiusTemperature * 9) / 5 + 32);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", fahrenheit);
+
+let celsiusTemperature = null;
 
 function city(event) {
   event.preventDefault();
