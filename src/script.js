@@ -21,6 +21,8 @@ function showTemperature(response) {
     " " + Math.round(response.data.main.temp);
   document.querySelector("#main-wind").innerHTML =
     " " + Math.round(response.data.wind.speed);
+  document.querySelector("#main-humidity").innerHTML =
+    response.data.main.humidity;
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector(".description").innerHTML =
     response.data.weather[0].description;
