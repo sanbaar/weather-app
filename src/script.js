@@ -86,3 +86,27 @@ function showPosition(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=2ff29bed3181c3526c35cc5408037f85&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
+
+function displayForecast() {
+  let forecastHTML = `<div class="row">`;
+  let days = ["Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2 prediction-day">
+              ${day}
+              <div class="prediction-icon">🌧</div>
+              <div class="temperature-prediction">
+                <span id="forecast-min">-2°C </span>
+                <span id="forecast-max"> 5°C</span>
+              </div>
+              </div>
+          `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  document.querySelector(".weather-forecast").innerHTML = forecastHTML;
+}
+
+displayForecast();
