@@ -58,23 +58,39 @@ function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastHTML = `<div class="row">`;
 
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2 prediction-day">
-              ${forecastDay.time}
-              <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png" alt="" />
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2 prediction-day">
+             ${forecastFormatDate(forecastDay.time)}
+              <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                forecastDay.condition.icon
+              }.png" alt="" />
               <div class="temperature-prediction">
-                <span id="forecast-min">${forecastDay.temperature.minimum}° </span>
-                <span id="forecast-max"> ${forecastDay.temperature.maximum}°</span>
+                <span id="forecast-min">${Math.round(
+                  forecastDay.temperature.minimum
+                )}° </span>
+                <span id="forecast-max"> ${Math.round(
+                  forecastDay.temperature.maximum
+                )}°</span>
               </div>
               </div>
           `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
 
   document.querySelector(".weather-forecast").innerHTML = forecastHTML;
+}
+
+function forecastFormatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
 }
 
 function celsius(event) {
