@@ -37,8 +37,15 @@ function showTemperature(response) {
     .setAttribute("alt", response.data.weather[0].description);
 
   celsiusTemperature = response.data.main.temp;
+
+  getForecast(response.data.coord);
 }
 
+function getForecast(coordinates) {
+  let apiKey = "7087aad4od5e90d0eef33tf0ba730640";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function celsius(event) {
   event.preventDefault();
   document.querySelector("#main-temperature").innerHTML =
@@ -87,7 +94,8 @@ function showPosition(position) {
   axios.get(apiUrl).then(showTemperature);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response);
   let forecastHTML = `<div class="row">`;
   let days = ["Wed", "Thu", "Fri"];
   days.forEach(function (day) {
@@ -97,8 +105,8 @@ function displayForecast() {
               ${day}
               <div class="prediction-icon">🌧</div>
               <div class="temperature-prediction">
-                <span id="forecast-min">-2°C </span>
-                <span id="forecast-max"> 5°C</span>
+                <span id="forecast-min">-2° </span>
+                <span id="forecast-max"> 5°</span>
               </div>
               </div>
           `;
@@ -108,5 +116,3 @@ function displayForecast() {
 
   document.querySelector(".weather-forecast").innerHTML = forecastHTML;
 }
-
-displayForecast();
