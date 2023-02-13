@@ -36,8 +36,6 @@ function showTemperature(response) {
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].description);
 
-  celsiusTemperature = response.data.main.temp;
-
   getForecast(response.data.coord);
 }
 
@@ -92,31 +90,6 @@ function forecastFormatDate(timestamp) {
 
   return days[day];
 }
-
-function celsius(event) {
-  event.preventDefault();
-  document.querySelector("#main-temperature").innerHTML =
-    " " + Math.round(celsiusTemperature);
-
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-}
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", celsius);
-
-function fahrenheit(event) {
-  event.preventDefault();
-  document.querySelector("#main-temperature").innerHTML =
-    " " + Math.round((celsiusTemperature * 9) / 5 + 32);
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", fahrenheit);
-
-let celsiusTemperature = null;
 
 function city(event) {
   event.preventDefault();
