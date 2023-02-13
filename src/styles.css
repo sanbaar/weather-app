@@ -58,6 +58,14 @@ a {
   text-transform: capitalize;
 }
 
+.forecast-icons {
+  width: 60px;
+}
+
+#forecast-min {
+  color: grey;
+}
+
 #icon {
   width: 120px;
   position: relative;
@@ -70,6 +78,7 @@ a {
 }
 
 .prediction-day {
+  text-align: center;
 }
 
 .prediction-icon {

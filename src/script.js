@@ -62,16 +62,18 @@ function displayForecast(response) {
         forecastHTML +
         `<div class="col-2 prediction-day">
              ${forecastFormatDate(forecastDay.time)}
+             </br>
               <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
                 forecastDay.condition.icon
-              }.png" alt="" />
+              }.png" alt="" class="forecast-icons"/>
               <div class="temperature-prediction">
-                <span id="forecast-min">${Math.round(
-                  forecastDay.temperature.minimum
-                )}° </span>
                 <span id="forecast-max"> ${Math.round(
                   forecastDay.temperature.maximum
                 )}°</span>
+                <span id="forecast-min">${Math.round(
+                  forecastDay.temperature.minimum
+                )}° </span>
+                
               </div>
               </div>
           `;
