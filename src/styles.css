@@ -1,5 +1,15 @@
+html {
+  min-height: 100%;
+}
+
 body {
   font-family: "Roboto", sans-serif;
+  background: radial-gradient(
+    1224px at 10.6% 8.8%,
+    rgb(255, 255, 255) 0%,
+    rgb(153, 202, 251) 100.2%
+  );
+  height: 100%;
 }
 
 h1 {
@@ -23,8 +33,9 @@ a {
 .card {
   max-width: 700px;
   display: block;
-  margin: 30px auto;
+  margin: 70px auto;
   margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .card-body {
@@ -36,11 +47,6 @@ a {
 #city-input {
   width: 450px;
   padding: 8px 15px;
-}
-
-#current-button {
-  padding: 8px 15px;
-  border-radius: 4px;
 }
 
 .current-date {
@@ -87,6 +93,8 @@ a {
 
 #search-button {
   padding: 8px 15px;
+  background-color: #9dd7f7;
+  border-radius: 4px;
 }
 
 #search-city {
@@ -105,8 +113,7 @@ a {
 
 .temp-rain-wind {
   font-size: 28px;
-  position: relative;
-  bottom: -30px;
+  margin-top: 30px;
 }
 
 .trw-icon {

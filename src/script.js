@@ -106,5 +106,5 @@ function showGeolocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
-let currentButton = document.querySelector("#current-button");
-currentButton.addEventListener("click", showGeolocation);
+
+window.addEventListener("load", showGeolocation);
